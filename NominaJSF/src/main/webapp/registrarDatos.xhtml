@@ -19,7 +19,7 @@
             <nav class="navbar navbar navbar-dark bg-primary">
                 <a class="navbar-brand text-dark" href="Inicio.aspx">
                     <!--<h:graphicImage url="resources/imagenes/iPear.png" width="30" height="30px"></h:graphicImage>-->
-                    <h:outputText value="Registro empleados" class="text-white p-4 font-italic"/>
+                    <h:outputText value="Registro empleado" class="text-white p-4 font-italic"/>
                 </a>
                 <a class="navbar-brand">
                     <h:button value="Registrar" outcome="registrarDatos" class="btn btn-outline-light m-2"/>
@@ -42,28 +42,28 @@
                         <h5 class=" font-weight-normal my-2">Nombre</h5>
                     </div>
                     <div class="col-3 text-center">
-                        <h:inputText id="I_Nombre" class="form-control text-center my-2"></h:inputText>
+                        <h:inputText value="#{registrarDatos.nombre}" class="form-control text-center my-2"></h:inputText>
                     </div>
                     <div class="col-6 text-left"></div>
                     <div class="col-3 text-left">
                         <h5 class=" font-weight-normal my-2">Apellido</h5>
                     </div>
                     <div class="col-3 text-center">
-                        <h:inputText id="I_Apellido" class="form-control text-center my-2"></h:inputText>
+                        <h:inputText value="#{registrarDatos.apellido}" class="form-control text-center my-2"></h:inputText>
                     </div>
                     <div class="col-6 text-left"></div>
                     <div class="col-3 text-left">
                         <h5 class=" font-weight-normal my-2">Documento identidad</h5>
                     </div>
                     <div class="col-3 text-center">
-                        <h:inputText id="I_Documento" class="form-control text-center my-2"></h:inputText>
+                        <h:inputText value="#{registrarDatos.documento}" class="form-control text-center my-2"></h:inputText>
                     </div>
                     <div class="col-6 text-left"></div>
                     <div class="col-3 text-left">
                         <h5 class=" font-weight-normal my-2">Fecha nacimiento</h5>
                     </div>
                     <div class="col-3 text-center">
-                        <h:inputText id="I_Fecha" class="form-control text-center" p:placeholder="DD/MM/AAAA"></h:inputText>
+                        <h:inputText value="#{registrarDatos.fechaNacimiento}" class="form-control text-center" p:placeholder="DD/MM/AAAA"></h:inputText>
                     </div>
                     <div class="col-3 text-left"></div>
                 </div>
@@ -77,9 +77,9 @@
                     <div class="col-3 text-left">
                         <h5 class=" font-weight-normal my-2">Nivel educación</h5>
                     </div>
-                    <div class="col-3 text-center">
+                    <div value="#{registrarDatos.educacion}" class="col-3 text-center">
                         <h:selectOneMenu class="form-control text-center my-2">
-                            <f:selectItem itemLabel="Seleccionar" itemDisabled="true"></f:selectItem>
+                            <f:selectItem noSelectionOption="true" itemLabel="Seleccionar" itemDisabled="true"></f:selectItem>
                             <f:selectItem itemValue="primaria" itemLabel="Primaria"></f:selectItem>
                             <f:selectItem itemValue="secundaria" itemLabel="Secundaria"></f:selectItem>
                             <f:selectItem itemValue="tecnico" itemLabel="Técnico"></f:selectItem>
@@ -93,8 +93,9 @@
                         <h5 class=" font-weight-normal my-2">Idiomas</h5>
                     </div>
                     <div class="col-3 text-center">
-                        <h:selectManyCheckbox class="ml-1">
+                        <h:selectManyCheckbox value="#{registrarDatos.idiomas}" class="ml-1">
                             <f:selectItem itemValue="aleman" itemLabel="Alemán"></f:selectItem>
+                            <f:selectItem itemValue="español" itemLabel="Español"></f:selectItem>
                             <f:selectItem itemValue="frances" itemLabel="Francés"></f:selectItem>
                             <f:selectItem itemValue="ingles" itemLabel="Inglés"></f:selectItem>
                             <f:selectItem itemValue="mandarin" itemLabel="Mandarín"></f:selectItem>
@@ -113,18 +114,27 @@
                         <h5 class=" font-weight-normal my-2">Sueldo base</h5>
                     </div>
                     <div class="col-3 text-center">
-                        <h:inputText id="I_SueldoBase" class="form-control text-center my-2"></h:inputText>
+                        <h:inputText value="#{registrarDatos.sueldoBase}" class="form-control text-center my-2"></h:inputText>
                     </div>
                     <div class="col-6 text-left"></div>
                     <div class="col-3 text-left">
                         <h5 class=" font-weight-normal my-2">Días trabajados</h5>
                     </div>
                     <div class="col-3 text-center">
-                        <h:inputText id="I_Dias" class="form-control text-center my-2"></h:inputText>
+                        <h:inputText value="#{registrarDatos.diasTrabajados}" class="form-control text-center my-2"></h:inputText>
                     </div>
                     <div class="col-6 text-left"></div>
                 </div>
-            </div>    
+                <br></br>
+                <div class="row">
+                    <div class="col-5"></div>
+                    <div class="col-2">
+                        <h:commandButton id="CB_Registrar" action="mostrarDatos" class="btn btn-primary btn-lg" value="Registrar"></h:commandButton>
+                        <br></br><br></br><br></br>
+                    </div>
+                    <div class="col-5"></div>
+                </div>
+            </div>
             
         </h:form>
         

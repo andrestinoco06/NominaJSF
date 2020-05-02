@@ -1,19 +1,15 @@
-package edu.unicundi.nominajsf;
+package edu.unicundi.modelo;
 
 import java.io.Serializable;
 import java.util.Date;
-import javax.inject.Named;
-import javax.faces.view.ViewScoped;
 
 /**
  *
  * @author Camilo Tinoco
  * @author Johan Zambrano
- * @versiona 1.0.0
+ * @version 1.0.0
  */
-@Named(value = "registrarDatos")
-@ViewScoped
-public class RegistrarDatos implements Serializable{
+public class Empleado implements Serializable {
     
     private String nombre, apellido, documento, educacion;
     
@@ -23,7 +19,18 @@ public class RegistrarDatos implements Serializable{
     
     private int sueldoBase, diasTrabajados;
     
-    public RegistrarDatos() {
+    public Empleado(){
+        
+    }
+    
+    public Empleado (String nombre, String apellido, String documento, String educacion, Date fechaNacimiento, String[] idiomas, int sueldoBase, int diasTrabajados){
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.educacion = educacion;
+        this.fechaNacimiento = fechaNacimiento;
+        this.idiomas = idiomas;
+        this.sueldoBase = sueldoBase;
+        this.diasTrabajados = diasTrabajados;
     }
 
     public String getNombre() {
@@ -89,4 +96,5 @@ public class RegistrarDatos implements Serializable{
     public void setDiasTrabajados(int diasTrabajados) {
         this.diasTrabajados = diasTrabajados;
     }
+        
 }
