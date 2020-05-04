@@ -93,7 +93,7 @@
                         <h5 class=" font-weight-normal my-2">Idiomas</h5>
                     </div>
                     <div class="col-3 text-center">
-                        <h:selectManyCheckbox value="#{registrarDatos.idiomas}" class="ml-1">
+                        <h:selectManyCheckbox value="#{registrarDatos.idiomas}" class="ml-1"  required="true" requiredMessage="Seleccionar un idioma">
                             <f:selectItem itemValue="aleman" itemLabel="Alemán"></f:selectItem>
                             <f:selectItem itemValue="espanol" itemLabel="Español"></f:selectItem>
                             <f:selectItem itemValue="frances" itemLabel="Francés"></f:selectItem>
