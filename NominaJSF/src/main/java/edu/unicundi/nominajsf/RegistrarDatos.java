@@ -1,27 +1,35 @@
 package edu.unicundi.nominajsf;
 
 import java.io.Serializable;
-import java.util.Date;
+import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
-import javax.faces.view.ViewScoped;
+/*import javax.faces.view.ViewScoped;
+import java.util.Date;*/
 
 /**
- *
+ *  ManageBean de registrarDatos.xhtml con Named = "registrarDatos" y scope "RequestScoped".
  * @author Camilo Tinoco
  * @author Johan Zambrano
  * @versiona 1.0.0
  */
 @Named(value = "registrarDatos")
-@ViewScoped
+@RequestScoped
 public class RegistrarDatos implements Serializable{
     
-    private String nombre, apellido, documento, educacion;
+    /**
+     * Variables tipo String para almacenar el nombre, apellido, educacion y fecha nacimiento del empleado.
+     */
+    private String nombre, apellido, documento, educacion, fechaNacimiento;
     
-    private Date fechaNacimiento;
-    
+    /**
+     * Array de String para almacenar los idiomas del empleado.
+     */
     private String[] idiomas;
     
-    private int sueldoBase, diasTrabajados;
+    /**
+     * Variables tipo int para almacenar el sueldo base, dias de trabajo y sueldo final del empleado.
+     */
+    private int sueldoBase, diasTrabajados, sueldoFinal;
     
     public RegistrarDatos() {
     }
@@ -58,11 +66,11 @@ public class RegistrarDatos implements Serializable{
         this.educacion = educacion;
     }
 
-    public Date getFechaNacimiento() {
+    public String getFechaNacimiento() {
         return fechaNacimiento;
     }
 
-    public void setFechaNacimiento(Date fechaNacimiento) {
+    public void setFechaNacimiento(String fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
 
@@ -89,4 +97,13 @@ public class RegistrarDatos implements Serializable{
     public void setDiasTrabajados(int diasTrabajados) {
         this.diasTrabajados = diasTrabajados;
     }
+
+    public int getSueldoFinal() {
+        return sueldoFinal;
+    }
+
+    public void setSueldoFinal(int sueldoFinal) {
+        this.sueldoFinal = sueldoFinal;
+    }
+    
 }

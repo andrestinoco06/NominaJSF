@@ -30,7 +30,7 @@
                 <div class="row">
                     <div class="col-12 text-center">
                         <br></br>
-                        <h3 class="font-weight-bolder">Complete el siguiente formulario</h3>
+                        <h3 class="font-weight-bolder">Registro de empleados</h3>
                         <hr></hr>
                     </div>
                     <div class="col-12 text-left font-weight-lighter">
@@ -77,9 +77,9 @@
                     <div class="col-3 text-left">
                         <h5 class=" font-weight-normal my-2">Nivel educación</h5>
                     </div>
-                    <div value="#{registrarDatos.educacion}" class="col-3 text-center">
-                        <h:selectOneMenu class="form-control text-center my-2">
-                            <f:selectItem noSelectionOption="true" itemLabel="Seleccionar" itemDisabled="true"></f:selectItem>
+                    <div class="col-3 text-center">
+                        <h:selectOneMenu value="#{registrarDatos.educacion}" class="form-control text-center my-2">
+                            <f:selectItem itemLabel="Seleccionar" itemDisabled="true"></f:selectItem>
                             <f:selectItem itemValue="primaria" itemLabel="Primaria"></f:selectItem>
                             <f:selectItem itemValue="secundaria" itemLabel="Secundaria"></f:selectItem>
                             <f:selectItem itemValue="tecnico" itemLabel="Técnico"></f:selectItem>
@@ -95,7 +95,7 @@
                     <div class="col-3 text-center">
                         <h:selectManyCheckbox value="#{registrarDatos.idiomas}" class="ml-1">
                             <f:selectItem itemValue="aleman" itemLabel="Alemán"></f:selectItem>
-                            <f:selectItem itemValue="español" itemLabel="Español"></f:selectItem>
+                            <f:selectItem itemValue="espanol" itemLabel="Español"></f:selectItem>
                             <f:selectItem itemValue="frances" itemLabel="Francés"></f:selectItem>
                             <f:selectItem itemValue="ingles" itemLabel="Inglés"></f:selectItem>
                             <f:selectItem itemValue="mandarin" itemLabel="Mandarín"></f:selectItem>
@@ -129,7 +129,7 @@
                 <div class="row">
                     <div class="col-5"></div>
                     <div class="col-2">
-                        <h:commandButton id="CB_Registrar" action="mostrarDatos" class="btn btn-primary btn-lg" value="Registrar"></h:commandButton>
+                        <h:commandButton action="#{mostrarDatos.sueldoFinal()}" class="btn btn-primary btn-lg" value="Registrar"></h:commandButton>
                         <br></br><br></br><br></br>
                     </div>
                     <div class="col-5"></div>

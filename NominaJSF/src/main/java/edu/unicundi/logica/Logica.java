@@ -12,8 +12,6 @@ public class Logica {
     
     private int sueldoEducacion, sueldoIdiomas, sueldoFinal;
     
-    private String idiomas;
-    
     private RegistrarDatos registrarDatos;
     
     public Logica (RegistrarDatos registrarDatos){
@@ -52,7 +50,11 @@ public class Logica {
            
     }
     
-    
+    public void sueldoFinal(){
+        
+        setSueldoFinal(getSueldoEducacion()+getSueldoIdiomas()+registrarDatos.getSueldoBase());
+        
+    }
     
     public int getSueldoEducacion() {
         return sueldoEducacion;
@@ -76,14 +78,6 @@ public class Logica {
 
     public void setSueldoFinal(int sueldoFinal) {
         this.sueldoFinal = sueldoFinal;
-    }
-
-    public String getIdiomas() {
-        return idiomas;
-    }
-
-    public void setIdiomas(String idiomas) {
-        this.idiomas = idiomas;
     }
 
     public RegistrarDatos getRegistrarDatos() {

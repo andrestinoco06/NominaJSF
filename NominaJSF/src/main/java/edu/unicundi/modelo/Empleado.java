@@ -23,15 +23,6 @@ public class Empleado implements Serializable {
         
     }
     
-    public Empleado (String nombre, String apellido, String documento, String educacion, Date fechaNacimiento, String[] idiomas, int sueldoBase, int diasTrabajados){
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.educacion = educacion;
-        this.fechaNacimiento = fechaNacimiento;
-        this.idiomas = idiomas;
-        this.sueldoBase = sueldoBase;
-        this.diasTrabajados = diasTrabajados;
-    }
 
     public String getNombre() {
         return nombre;
